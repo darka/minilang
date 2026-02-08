@@ -1,3 +1,6 @@
+# Minilang Example
+
+```python
 # comments start with #
 
 let x = 10
@@ -23,3 +26,11 @@ while i < len(nums) {
 }
 
 print(sum)
+```
+
+Expected output:
+
+```
+103
+10
+```

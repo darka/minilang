@@ -1,3 +1,6 @@
+# Minilang Grammar (EBNF)
+
+```ebnf
 program     := { stmt } ;
 
 stmt        := letStmt | assignStmt | ifStmt | whileStmt | forStmt
@@ -32,3 +35,4 @@ primary     := NUMBER | STRING | "true" | "false"
              | IDENT
              | "[" [ args ] "]"
              | "(" expr ")" ;
+```
