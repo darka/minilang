@@ -365,7 +365,7 @@ fn parser_unexpected_token() {
 // ===== Regression: EXAMPLE.md =====
 
 #[test]
-fn regression_example_md() {
+fn reference_program() {
     let source = r#"
 # comments start with #
 
