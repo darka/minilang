@@ -50,12 +50,14 @@ enum Signal {
 
 pub struct Interpreter {
     scopes: Vec<HashMap<String, Value>>,
+    pub output: Vec<String>,
 }
 
 impl Interpreter {
     pub fn new() -> Self {
         Interpreter {
             scopes: vec![HashMap::new()],
+            output: Vec::new(),
         }
     }
 
@@ -254,7 +256,7 @@ impl Interpreter {
                                 vals.push(self.eval_expr(a)?);
                             }
                             if let Some(v) = vals.first() {
-                                println!("{}", v);
+                                self.output.push(format!("{}", v));
                             }
                             return Ok(Value::Null);
                         }

@@ -1,10 +1,6 @@
-mod interpreter;
-mod lexer;
-mod parser;
-
-use interpreter::Interpreter;
-use lexer::Lexer;
-use parser::Parser;
+use minilang::interpreter::Interpreter;
+use minilang::lexer::Lexer;
+use minilang::parser::Parser;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -43,5 +39,9 @@ fn main() {
     if let Err(e) = interpreter.run(&program) {
         eprintln!("Runtime error: {}", e);
         std::process::exit(1);
+    }
+
+    for line in &interpreter.output {
+        println!("{}", line);
     }
 }
